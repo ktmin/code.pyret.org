@@ -9,7 +9,7 @@ function createWindow() {
   let win = new BrowserWindow({ width: 800, height: 600})
 
   win.loadURL(url.format({
-    pathname: path.join(__dirname, './build_experiment/web/views/editor.html'), //./code.pyret.org/build/web/views/editor.html
+    pathname: path.join(__dirname, './build_electron/web/views/editor.html'), //./code.pyret.org/build/web/views/editor.html
     protocol: 'file:',
     slashes: true
   }))
