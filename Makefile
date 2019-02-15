@@ -86,6 +86,9 @@ COPY_JS := $(patsubst src/web/js/%.js,build/web/js/%.js,$(wildcard src/web/js/*.
 build/web/js/%.js: src/web/js/%.js
 	cp $< $@
 
+build/web/js/config.js: src/web/js/config-web.js
+	cp $< $@
+
 COPY_GOOGLE_JS := $(patsubst src/web/js/google-apis/%.js,build/web/js/google-apis/%.js,$(wildcard src/web/js/google-apis/*.js))
 
 build/web/js/google-apis/%.js: src/web/js/google-apis/%.js
@@ -166,7 +169,8 @@ MISC_JS = build/web/js/q.js build/web/js/url.js build/web/js/require.js \
           build/web/js/es6-shim.js \
           build/web/js/runmode.js \
 					build/web/js/mousetrap.min.js \
-					build/web/js/mousetrap-global-bind.min.js
+					build/web/js/mousetrap-global-bind.min.js \
+					build/web/js/config.js
 
 MISC_IMG = build/web/img/pyret-icon.png build/web/img/pyret-logo.png build/web/img/pyret-spin.gif build/web/img/up-arrow.png build/web/img/down-arrow.png
 

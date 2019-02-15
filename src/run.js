@@ -17,9 +17,9 @@ if(redisParam !== "") {
 else {
   var client = null;
 }
-var loc = document.location.pathname;
-var path = loc.substring(0, loc.length-17);
-console.log(path)
+//var loc = document.location.pathname;
+//var path = loc.substring(0, loc.length-17);
+//console.log(path)
 
 var res = Q.fcall(function(db) {
   server.start({
@@ -38,7 +38,7 @@ var res = Q.fcall(function(db) {
       redirect: "/oauth2callback"
     },
     version: process.env["CURRENT_PYRET_RELEASE"],
-    pyret: "" //process.env["PYRET"]
+    pyret: process.env["PYRET"]
   }, function(app) {
     console.log("Server ready.");
   });
