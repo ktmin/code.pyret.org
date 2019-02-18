@@ -1132,8 +1132,13 @@ $(function() {
     CPO.documents.set("definitions://", CPO.editor.cm.getDoc());
   });
 
-  var loc = document.location.pathname;
-  var path = loc.substring(0, loc.length-17);
+  var loc = window.location.href;
+  if (MODE == "WEB"){
+    var path = loc.substring(0, loc.length-6);
+  }
+  else {
+    var path = loc.substring(0, loc.length-17);
+  }
   path += "js/cpo-main.jarr";
   console.log(path)
 

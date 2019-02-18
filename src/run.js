@@ -17,9 +17,6 @@ if(redisParam !== "") {
 else {
   var client = null;
 }
-//var loc = document.location.pathname;
-//var path = loc.substring(0, loc.length-17);
-//console.log(path)
 
 var res = Q.fcall(function(db) {
   server.start({

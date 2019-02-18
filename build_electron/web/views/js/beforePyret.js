@@ -1741,10 +1741,11 @@
 	  var loc = document.location.pathname;
 	  var path = loc.substring(0, loc.length - 17);
 	  path += "js/cpo-main.jarr";
+		console.log(loc);
 	  console.log(path);
 
 	  var pyretLoad = document.createElement('script');
-	  console.log(("test"));
+	  //console.log(("test"));
 	  pyretLoad.src = path;
 	  pyretLoad.type = "text/javascript";
 	  document.body.appendChild(pyretLoad);
