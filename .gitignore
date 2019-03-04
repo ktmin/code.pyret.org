@@ -12,5 +12,3 @@ pyret
 .DS_Store
 test-util/failed-test-screenshots/*
 .coverage/
-build_electron
-build_web
