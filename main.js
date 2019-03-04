@@ -3,13 +3,21 @@ const url = require('url')
 const path = require('path')
 const {ipcMain} = require('electron')
 
+require('electron-handlebars') ({
+  MODE: process.env["MODE"],
+  LOG_URL: process.env["LOG_URL"],
+  BASE_URL: process.env["BASE_URL"],
+  CSRF_TOKEN: "",
+  GOOGLE_API_KEY: ""
+});
+
 let win
 
 function createWindow() {
   let win = new BrowserWindow({ width: 800, height: 600})
 
   win.loadURL(url.format({
-    pathname: path.join(__dirname, './build_experiment/web/views/editor.html'), //./code.pyret.org/build/web/views/editor.html
+    pathname: path.join(__dirname, './build/web/views/editor.html'), //./code.pyret.org/build/web/views/editor.html
     protocol: 'file:',
     slashes: true
   }))

@@ -26,6 +26,7 @@
     "d3": "~3",
     "d3-tip": "git://github.com/sorawee/d3-tip.git",
     "dotenv": "^2.0.0",
+    "electron-handlebars": "git://github.com/dlhsiao/electron-handlebars.git#file_compatability",
     "es6-shim": "0.35.0",
     "eslint": "^2.12.0",
     "express": "^4.1.1",
@@ -43,6 +44,7 @@
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "^3.0.5",
     "load-script": "^1.0.0",
+    "mime": "^1.6.0",
     "mocha": "^5.2.0",
     "mousetrap": "^1.6.1",
     "mustache": "^2.2.1",
@@ -80,7 +82,7 @@
     "build": "heroku local:run make web-local",
     "mocha": "heroku local:run mocha",
     "start-web": "heroku local:run supervisor --poll-interval 700 --watch src/run.js,src/server.js src/run.js & heroku local:run webpack-dev-server --port 5001 --watch",
-    "start-app": "electron ./main.js"
+    "start-app": "heroku local:run electron ./main.js"
   },
   "repository": {
     "type": "git",
@@ -90,7 +92,7 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "chromedriver": "^2.36.2",
-    "electron": "^4.0.4",
+    "electron": "^4.0.5",
     "selenium-webdriver": "^3.6.0",
     "webpack-cli": "^3.1.2"
   }

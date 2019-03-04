@@ -18,6 +18,7 @@ use the standalone pyret that comes with the checkout, you can just set
 
 ```
 PYRET="http://localhost:5000/js/cpo-main.jarr"
+MODE="/"
 ```
 
 Then you can run
@@ -34,7 +35,7 @@ To run the server (you can let it running in a separate tab --
 it doesn't need to be terminated across builds), run:
 
 ```
-$ npm run start-app
+$ npm run start-web
 ```
 
 The editor will be served from `http://localhost:5000/editor`.
@@ -182,4 +183,6 @@ https://devcenter.heroku.com/articles/getting-started-with-nodejs
 
 ### To run Electron Version
 1. Install electron `npm install --save-dev electron`
+2. In the .env file, change PYRET to "../js/cpo-main.jarr" and MODE to "../"
+3. Run `npm run build`
 2. Run `npm run start-app`
