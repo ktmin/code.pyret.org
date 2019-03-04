@@ -1737,16 +1737,9 @@
 	    CPO.documents.set("definitions://", CPO.editor.cm.getDoc());
 	  });
 
-	  //If it just electron
-	  var loc = document.location.pathname;
-	  var path = loc.substring(0, loc.length - 17);
-	  path += "js/cpo-main.jarr";
-		console.log(loc);
-	  console.log(path);
-
 	  var pyretLoad = document.createElement('script');
-	  //console.log(("test"));
-	  pyretLoad.src = path;
+	  console.log("./js/cpo-main.jarr");
+	  pyretLoad.src = "./js/cpo-main.jarr";
 	  pyretLoad.type = "text/javascript";
 	  document.body.appendChild(pyretLoad);
 

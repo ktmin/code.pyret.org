@@ -3,43 +3,17 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <title>code.pyret.org</title>
-  <!--<base href="../">-->
 
-  <!-- <link rel="stylesheet" href="css/reset.css" /> -->
+  <link rel="stylesheet" href="{{{ MODE }}}css/reset.css" />
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
-  <!-- <link rel="stylesheet" href="css/codemirror.css" />
-  <link rel="stylesheet" href="css/foldgutter.css" />
-  <link rel="stylesheet" href="css/shared.css" />
-  <link rel="stylesheet" href="css/editor.css" />
-  <link rel="stylesheet" href="css/font-awesome.min.path-fixed.css" /> -->
+  <link rel="stylesheet" href="{{{ MODE }}}css/codemirror.css" />
+  <link rel="stylesheet" href="{{{ MODE }}}css/foldgutter.css" />
+  <link rel="stylesheet" href="{{{ MODE }}}css/shared.css" />
+  <link rel="stylesheet" href="{{{ MODE }}}css/editor.css" />
+  <link rel="stylesheet" href="{{{ MODE }}}css/font-awesome.min.path-fixed.css" />
   <link rel="icon" type="image/png" href="img/pyret-icon.png" />
   <style id="highlight-styles"></style>
   <script>var APP_LOG_URL = "{{{ LOG_URL }}}";</script>
-  <script>
-    var loc = window.location.href;
-    var mode = "{{{ MODE }}}";
-    console.log(mode);
-    if (mode == "WEB") {
-      var path = loc.substring(0, loc.length-6);
-    }
-    else {
-      var path = loc.substring(0, loc.length-17);
-    }
-    console.log(path);
-    var cssFiles =["css/reset.css",
-      "css/codemirror.css",
-      "css/foldgutter.css",
-      "css/shared.css",
-      "css/editor.css",
-      "css/font-awesome.min.path-fixed.css"
-    ]
-    for (i in cssFiles) {
-      var link = document.createElement( "link" );
-      link.href = path + cssFiles[i];
-      link.rel = "stylesheet";
-      document.getElementsByTagName( "head" )[0].appendChild( link );
-    }
-  </script>
 </head>
 <body>
   <main>

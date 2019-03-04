@@ -1132,19 +1132,9 @@ $(function() {
     CPO.documents.set("definitions://", CPO.editor.cm.getDoc());
   });
 
-  var loc = window.location.href;
-  if (MODE == "WEB"){
-    var path = loc.substring(0, loc.length-6);
-  }
-  else {
-    var path = loc.substring(0, loc.length-17);
-  }
-  path += "js/cpo-main.jarr";
-  console.log(path)
-
   var pyretLoad = document.createElement('script');
   console.log(process.env.PYRET);
-  pyretLoad.src = path;
+  pyretLoad.src = process.env.PYRET;
   pyretLoad.type = "text/javascript";
   document.body.appendChild(pyretLoad);
 
