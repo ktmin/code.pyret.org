@@ -1,9 +1,9 @@
 const { app, BrowserWindow } = require('electron')
 const url = require('url')
 const path = require('path')
-const {ipcMain} = require('electron')
+const { ipcMain } = require('electron')
 
-require('electron-handlebars') ({
+require('electron-handlebars')({
   MODE: process.env["MODE"],
   LOG_URL: process.env["LOG_URL"],
   BASE_URL: process.env["BASE_URL"],
@@ -14,7 +14,7 @@ require('electron-handlebars') ({
 let win
 
 function createWindow() {
-  let win = new BrowserWindow({ width: 800, height: 600})
+  let win = new BrowserWindow({ width: 800, height: 600 })
 
   win.loadURL(url.format({
     pathname: path.join(__dirname, './build/web/views/editor.html'), //./code.pyret.org/build/web/views/editor.html
@@ -35,10 +35,10 @@ function createWindow() {
 }
 
 ipcMain.on('openFile', (event, path) => {
-  const {dialog} = require('electron')
+  const { dialog } = require('electron')
   const fs = require('fs')
   dialog.showOpenDialog(function (fileNames) {
-    if(fileNames === undefined) {
+    if (fileNames === undefined) {
       console.log("No file selected");
     } else {
       readFile(fileNames[0]);
@@ -47,7 +47,7 @@ ipcMain.on('openFile', (event, path) => {
 
   function readFile(filepath) {
     fs.readFile(filepath, 'utf-8', (err, data) => {
-      if(err){
+      if (err) {
         alert("An error occurred reading the file:" + err.message)
         return
       }
